@@ -10,7 +10,7 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "pytest-cov", "pydantic", "pyyaml", "typer", "ruff", "pyright"]
+dev = ["pytest>=8", "pytest-cov", "pydantic", "pyyaml", "typer", "ruff", "pyright", "pre-commit"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -24,3 +24,9 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+[tool.pyright]
+include = ["src", "tests"]
+extraPaths = ["src"]
+pythonVersion = "3.10"
+typeCheckingMode = "basic"
